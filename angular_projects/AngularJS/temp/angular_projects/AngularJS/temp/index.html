@@ -1,0 +1,27 @@
+<html lang="en" ng-app="customersApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Hello World</title>
+</head>
+<style>
+    table {
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+        cursor: pointer;
+    }
+    td {
+        width: 130px;
+    }
+    
+</style>
+<body>
+    <div ng-view></div>
+    <script src="/srcipts/angular.js"></script>
+    <script src="/scripts/angular-route.js"></script>
+    <script src="/app/app.js"></script>
+    <script src="/app/controllers/customersController.js"></script>
+</body>
+</html>
