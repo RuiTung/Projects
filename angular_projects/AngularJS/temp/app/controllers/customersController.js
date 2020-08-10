@@ -46,8 +46,15 @@
         $scope.customers = [];
         $scope.appSettings = appSettings;
 
+        // async call
         function init() {
-            $scope.customers = customersFactory.getCustomers();
+            customersFactory.getCustomers()
+            .success(function(customers) {
+                $scope.customers = customers;
+            })
+            .error(function(data, status, headers, config) {
+
+            });
         }
         init();
 
