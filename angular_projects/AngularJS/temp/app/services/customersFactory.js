@@ -3,7 +3,7 @@
         var customers = [
             {
                 id: 1,
-                joined: '2020,-01-01',
+                joined: '2020-01-01',
                 name: 'Abel',
                 city: 'Van',
                 orderTotal: 3.86,
@@ -88,6 +88,14 @@
             return orders;
         }
 
+        factory.deleteCustomer = function(customerId) {
+            for(var i = 0; i < customers.length; i++) {
+                if(customers[i].id === parseInt(customerId)) {
+                    customers.splice(i, 1);
+                    break;
+                }
+            }
+        }
         return factory;
     };
 

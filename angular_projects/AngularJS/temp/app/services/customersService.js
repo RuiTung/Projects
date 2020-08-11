@@ -3,7 +3,7 @@
         var customers = [
             {
                 id: 1,
-                joined: '2020,-01-01',
+                joined: '2020-01-01',
                 name: 'Abel',
                 city: 'Van',
                 orderTotal: 3.86,

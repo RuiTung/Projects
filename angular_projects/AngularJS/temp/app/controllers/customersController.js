@@ -66,6 +66,15 @@
             $scope.sortBy = propName;
             $scope.reverse = !$scope.reverse;
         };
+
+        $scope.deleteCustomer = function(customerId) {
+            for(var i = 0; i < $scope.customers.length; i++) {
+                if($scope.customers[i].id === customerId) {
+                    $scope.customers.splice(i, 1);
+                    break;
+                }
+            }
+        }
     };
     // CustomersController.$inject = ['$scope', '$log', 'customersFactory', 'appSettings'];
     CustomersController.$inject = ['$scope', 'customersFactory', 'appSettings'];

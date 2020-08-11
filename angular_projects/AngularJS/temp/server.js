@@ -19,6 +19,32 @@ app.get('/customers', function(req, res) {
     // res.json(500, {error: 'An err has occurred.'});
 });
 
+app.get('/customers', function(req, res) {
+    var customerId = parseInt(req.params.id);
+    var data = {status: true};
+    for(var i = 0; i < customers.length; i++) {
+        if(customers[i].id === customerId) {
+            customers.splice(i, 1);
+                data = {status: true};
+                break;
+        }
+    }
+    res.json(data);
+});
+
+app.delete('/customers', function(req, res) {
+    var customerId = parseInt(req.params.id);
+    var data = {stats: true};
+    for(var i = 0; i < customers.length; i++) {
+        if(customers[i].id === customerId) {
+            customers.splice(i, 1);
+            data = {status:true};
+            break;
+        }
+    }
+    res.json(data);
+});
+
 app.listen(8080);
 
 console.log('Express listening on port 8080');
@@ -26,7 +52,7 @@ console.log('Express listening on port 8080');
 var customers = [
     {
         id: 1,
-        joined: '2020,-01-01',
+        joined: '2020-01-01',
         name: 'Abel',
         city: 'Van',
         orderTotal: 3.86,
