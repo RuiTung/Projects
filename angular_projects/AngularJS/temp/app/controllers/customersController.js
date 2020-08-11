@@ -40,21 +40,25 @@
 
 // option 3
 (function() {
-    var CustomersController = function ($scope, $log, customersFactory, appSettings) {
+    // log service
+    // var CustomersController = function ($scope, $log, customersFactory, appSettings) {
+    var CustomersController = function ($scope, customersFactory, appSettings) {
         $scope.sortBy = 'name';
         $scope.reverse = false;
         $scope.customers = [];
         $scope.appSettings = appSettings;
 
-        // async call
+        
         function init() {
-            customersFactory.getCustomers()
-            .success(function(customers) {
-                $scope.customers = customers;
-            })
-            .error(function(data, status, headers, config) {
-                $log.log(data.error + ' ' + status);
-            });
+            // async call
+            // customersFactory.getCustomers()
+            // .success(function(customers) {
+            //     $scope.customers = customers;
+            // })
+            // .error(function(data, status, headers, config) {
+            //     $log.log(data.error + ' ' + status);
+            // });
+            $scope.customers = customersFactory.getCustomers();
         }
         init();
 
@@ -63,7 +67,8 @@
             $scope.reverse = !$scope.reverse;
         };
     };
-    CustomersController.$inject = ['$scope', '$log', 'customersFactory', 'appSettings'];
+    // CustomersController.$inject = ['$scope', '$log', 'customersFactory', 'appSettings'];
+    CustomersController.$inject = ['$scope', 'customersFactory', 'appSettings'];
     angular.module('customersApp')
         .controller('CustomersController', CustomersController);
 

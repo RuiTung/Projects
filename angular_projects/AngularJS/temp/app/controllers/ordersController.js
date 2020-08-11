@@ -4,13 +4,15 @@
         $scope.customer = null;
 
         function init() {
-            customersFactory.getCustomer(customerId)
-            .success(function(customer) {
-                $scope.customer = customer;
-            })
-            .error(function(data, status, headers, config) {
-
-            });
+            // async call
+            // customersFactory.getCustomer(customerId)
+            // .success(function(customer) {
+            //     $scope.customer = customer;
+            // })
+            // .error(function(data, status, headers, config) {
+            //     $log.log(data.error + ' ' + status);
+            // });
+            $scope.customer = customersFactory.getCustomer(customerId);
         }
 
         init();
