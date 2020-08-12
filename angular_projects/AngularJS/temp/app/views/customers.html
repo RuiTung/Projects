@@ -1,6 +1,9 @@
-<h2>{{ appSettings.title }}</h2>
+<h2 class="text-center">{{ appSettings.title }}</h2>
 <br>
-Filter: <input type="text" ng-model="customerFilter.name">
+<div class="text-right">
+    Filter: <input type="text" ng-model="customerFilter.name">
+</div>
+
 <br><br><br>
 <table class="table table-striped">
     <tr>
@@ -11,7 +14,7 @@ Filter: <input type="text" ng-model="customerFilter.name">
         <th>&nbsp</th>
         <th></th>
     </tr>
-    <tr ng-repeat="cust in customers | filter:customerFilter | orderBy:sortBy:reverse">
+    <tr ng-repeat="cust in customers | filter:customerFilter | orderBy:sortBy:reverse" class="repeat-animation">
         <td>{{ cust.name | uppercase }}</td>
         <td>{{ cust.city | lowercase }}</td>
         <td>{{ cust.orderTotal | currency }}</td>
@@ -24,7 +27,8 @@ Filter: <input type="text" ng-model="customerFilter.name">
 </table>
 
 <br>
-<span>Total customers: {{ customers.length }}</span>
-<br><br>
+<div class="text-right">
+    <span>Total customers: {{ customers.length }}</span>
+</div>
 
-<footer>Version: {{ appSettings.version }}</footer>
+<footer class="text-right">Version: {{ appSettings.version }}</footer>
