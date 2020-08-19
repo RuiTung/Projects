@@ -1,0 +1,9 @@
+body {
+    text-align: center;
+    background: #ffffff;
+}
+
+#pingpong-canvas {
+    margin-left: 10px;
+    margin-right: 10px;
+}
