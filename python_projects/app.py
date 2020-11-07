@@ -10,10 +10,10 @@ from datetime import datetime
 app = Flask(__name__)
 
 # Config MySQL
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'luckydover38'
-app.config['MYSQL_DB'] = 'twitter'
+app.config['MYSQL_HOST'] = 'us-cdbr-east-02.cleardb.com'
+app.config['MYSQL_USER'] = 'b30f91d5550828'
+app.config['MYSQL_PASSWORD'] = '2a11f5c2'
+app.config['MYSQL_DB'] = 'heroku_4188fbcf1472bbd'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 app.config['SECRET_KEY'] = 'super secret key'
 
@@ -55,7 +55,15 @@ def comments(id):
     result = cur.execute("SELECT * FROM comments WHERE tweetsID = %s", [id])
 
     comments = cur.fetchall()
-    return render_template('comments.html', comments = comments)
+
+    if result > 0:
+        return render_template('comments.html', comments = comments)
+    else:
+        msg = "No comments found"
+        return render_template('comments.html', msg = msg)
+
+    #close connection
+    cur.close()
 
 
 # tweet form class

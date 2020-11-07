@@ -1,8 +1,8 @@
 The steps for running the Lite Twitter:
-(I am using Mac for implementation this project, the installation of the apps are based on Mac's command. However, the processes are very similar for a PC. For setting up the environment on Visual Studio Code(Herein after VSC), I referenced https://youtu.be/ojzNmvkNfqc)
+(I am using Mac for implementation this project, the installation of the apps are based on Mac's command. However, the processes are very similiar for a PC)
 
 1. Go to https://www.python.org/downloads/ to download Python (I am using Python3.8.2 64-bit)
-2. Go to https://code.visualstudio.com/Download to download Visual Studio Code
+2. Go to https://code.visualstudio.com/Download to download Visual Studio Code (Herein after VSC)
 3. After installed VSC, open the file folder that you downloaded
 4. Go to View menu of VSC to choose Terminal
 
@@ -23,4 +23,4 @@ For running the app: (You can watch the demo on youtube: https://youtu.be/xBI3G0
 16. Click the Run button on the very left of VSC, and choose Flask as the running environment
 
 Notice:
-For the line 13, 14, and 15 in the app.py, please feel free to change to your mysql setting respectively. However, please MAKE SURE keep the SAME of the line 16 of the database name. Otherwise, the app will not run correctly.
+For the line 13, 14, and 15 in the app.py, plese feel free to change to your mysql setting respectively. However, please MAKE SURE keep the SAME of the line 16 of the database name. Otherwise, the app will not run correctly.
