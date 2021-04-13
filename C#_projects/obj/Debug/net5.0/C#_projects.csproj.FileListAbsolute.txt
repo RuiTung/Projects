@@ -1,0 +1,15 @@
+/Users/Dover/Documents/GitHub/Projects/C#_projects/obj/Debug/net5.0/C#_projects.csprojAssemblyReference.cache
+/Users/Dover/Documents/GitHub/Projects/C#_projects/obj/Debug/net5.0/C#_projects.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Dover/Documents/GitHub/Projects/C#_projects/obj/Debug/net5.0/C#_projects.AssemblyInfoInputs.cache
+/Users/Dover/Documents/GitHub/Projects/C#_projects/obj/Debug/net5.0/C#_projects.AssemblyInfo.cs
+/Users/Dover/Documents/GitHub/Projects/C#_projects/obj/Debug/net5.0/C#_projects.csproj.CoreCompileInputs.cache
+/Users/Dover/Documents/GitHub/Projects/C#_projects/bin/Debug/net5.0/C#_projects.deps.json
+/Users/Dover/Documents/GitHub/Projects/C#_projects/bin/Debug/net5.0/C#_projects.runtimeconfig.json
+/Users/Dover/Documents/GitHub/Projects/C#_projects/bin/Debug/net5.0/C#_projects.runtimeconfig.dev.json
+/Users/Dover/Documents/GitHub/Projects/C#_projects/bin/Debug/net5.0/C#_projects.dll
+/Users/Dover/Documents/GitHub/Projects/C#_projects/bin/Debug/net5.0/ref/C#_projects.dll
+/Users/Dover/Documents/GitHub/Projects/C#_projects/bin/Debug/net5.0/C#_projects.pdb
+/Users/Dover/Documents/GitHub/Projects/C#_projects/obj/Debug/net5.0/C#_projects.dll
+/Users/Dover/Documents/GitHub/Projects/C#_projects/obj/Debug/net5.0/ref/C#_projects.dll
+/Users/Dover/Documents/GitHub/Projects/C#_projects/obj/Debug/net5.0/C#_projects.pdb
+/Users/Dover/Documents/GitHub/Projects/C#_projects/obj/Debug/net5.0/C#_projects.genruntimeconfig.cache
