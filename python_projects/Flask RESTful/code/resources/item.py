@@ -1,5 +1,5 @@
 from flask_restful import Resource, reqparse
-from flask_jwt import jwt_required
+from flask_jwt_extended import jwt_required, get_jwt, get_jwt_identity
 from models.item import ItemModel
 
 class Item(Resource):
@@ -18,13 +18,14 @@ class Item(Resource):
         help="Mandatory field!"
     )
 
-    @jwt_required()
+    @jwt_required
     def get(self, name):
         item = ItemModel.find_by_name(name)
         if item:
             return item.json()
         return {"message": "Item not found"}, 404
-
+    
+    @jwt_required(refresh=True)
     def post(self, name):
         if ItemModel.find_by_name(name):
             return {"message": "item '{}' exists".format(name)}, 400 # Request error
@@ -40,7 +41,13 @@ class Item(Resource):
         
         return item.json(), 201
 
+
+    @jwt_required
     def delete(self, name):
+        claims = get_jwt()
+        if not claims["is_admin"]:
+            return {"message": "level is not correct, need admin"}, 401
+
         item = ItemModel.find_by_name(name)
         if item:
             item.delete_from_db()
@@ -53,9 +60,9 @@ class Item(Resource):
 
         if item:
             # item = ItemModel(name, data["price"], data["store_id"])
-            item = ItemModel(name, **data)
+            item.price = data['price']
         else:
-            item.price = data["price"]
+            item = ItemModel(name, **data)
 
         item.save_to_db()
 
@@ -63,6 +70,15 @@ class Item(Resource):
 
 
 class ItemList(Resource):
+    @jwt_required(optional=True)
     def get(self):
+        user_id = get_jwt_identity()
+        items = [item.json() for item in ItemModel.find_all()]
+        if user_id:
+            return {"items": items}, 200
+        return {
+            "items": [item["name"] for item in items],
+            "message": "To login to see details"
+        }, 200
+
         # return {"item": list(map(lambda x: x.json(), ItemModel.query.all()))}
-        return {"item": [item.json() for item in ItemModel.query.all()]}
